@@ -1,6 +1,6 @@
 import json
 from flask import Flask, request
-from prettyprint import prettyprint as pp
+from pprint import pprint as pp
 
 app = Flask(__name__)
 
@@ -14,6 +14,7 @@ def index():
 def hook():
     data = json.loads(request.data)
     event = request.headers['X-GitHub-Event']
+    pp(request.headers)
     pp(event)
     pp(data)
     return 'OK'
