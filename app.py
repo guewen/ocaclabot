@@ -37,6 +37,7 @@ def index():
     page = template % '\n'.join(['<tr><td>%s</td><td>%s</td></tr>' %
                                  (push.repo_name(),
                                   push.owner_name()) for push in history])
+    pp(page)
     return page
 
 
