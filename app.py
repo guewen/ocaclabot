@@ -33,11 +33,9 @@ class GitHubPush(object):
 def index():
     template = ('<html><head><title>OCA CLA</title></head>'
                 '<body><table>%s</table></body></html>')
-    pp(history)
     page = template % '\n'.join(['<tr><td>%s</td><td>%s</td></tr>' %
                                  (push.repo_name(),
                                   push.owner_name()) for push in history])
-    pp(page)
     return page
 
 
@@ -49,6 +47,5 @@ def hook():
     pp(event)
     pp(data)
     if event == 'push':
-        pp('push OK')
         add_to_history(GitHubPush(data))
     return 'OK'
