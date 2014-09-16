@@ -4,6 +4,14 @@ from pprint import pprint as pp
 
 app = Flask(__name__)
 
+"""
+TODO:
+
+* Create hooks on OCA projects using https://developer.github.com/v3/repos/hooks/#create-a-hook
+* The history does not work, maybe because the processes are not the same
+* push the status
+"""
+
 
 MAX_HISTORY = 50
 history = []
